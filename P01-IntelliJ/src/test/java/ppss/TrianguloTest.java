@@ -73,9 +73,9 @@ public class TrianguloTest {
 
     @Test
     public void testTipo_trianguloC7() {
-        a = 1;
-        b = -1234567;
-        c = -1;
+        a = 11;
+        b = 11;
+        c = 5;
         resultadoEsperado = "Valor b fuera del rango permitido";
         tri= new Triangulo();
         resultadoReal = tri.tipo_triangulo(a,b,c);
