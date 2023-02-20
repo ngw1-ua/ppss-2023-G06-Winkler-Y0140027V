@@ -1,3 +1,4 @@
+package ppss;
 
 public class DataException extends Exception {
     public DataException() {
