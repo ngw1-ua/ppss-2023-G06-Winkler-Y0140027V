@@ -14,6 +14,7 @@ public class FicheroTexto {
             int i=0;
             while (i != -1) {
                 i = fichero.read();
+                if (i == -1) continue;
                 contador++;
             }
         } catch (FileNotFoundException e1) {
