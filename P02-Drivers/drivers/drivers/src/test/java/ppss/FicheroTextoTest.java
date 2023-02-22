@@ -18,12 +18,12 @@ public class FicheroTextoTest {
     }
 
     @Test
-    public void contarCaracteresC2() throws FicheroException {
+    public void contarCaracteresC2() {
         String nombreFichero = "src/test/resources/ficheroCorrecto.txt";
         FicheroTexto ft = new FicheroTexto();
         int expextedRes = 3;
 
-        int res = ft.contarCaracteres(nombreFichero);
+        int res = assertDoesNotThrow(() -> ft.contarCaracteres(nombreFichero));
 
         assertEquals(expextedRes, res);
     }
@@ -34,7 +34,7 @@ public class FicheroTextoTest {
         String expectedMessage = "ficheroC3.txt (Error al leer el archivo)";
 
         FicheroTexto ft = new FicheroTexto();
-        Exception ex = assertThrows(IOException.class, () -> ft.contarCaracteres(nombreFichero));
+        Exception ex = assertThrows(FicheroException.class, () -> ft.contarCaracteres(nombreFichero));
 
         assertTrue(ex.getMessage().contains(expectedMessage));
     }
@@ -45,7 +45,7 @@ public class FicheroTextoTest {
         String expectedMessage = "ficheroC3.txt (Error al cerrar el archivo)";
 
         FicheroTexto ft = new FicheroTexto();
-        Exception ex = assertThrows(IOException.class, () -> ft.contarCaracteres(nombreFichero));
+        Exception ex = assertThrows(FicheroException.class, () -> ft.contarCaracteres(nombreFichero));
 
         assertTrue(ex.getMessage().contains(expectedMessage));
     }

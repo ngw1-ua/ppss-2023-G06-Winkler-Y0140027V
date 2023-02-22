@@ -5,45 +5,44 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DataArrayTest {
     @Test
-    public void deleteC1() throws DataException {
+    public void deleteC1() {
         int entrada[] = new int[]{1,3,5,7};
         int elemBorrar = 5;
         int expectedArray[] = new int[]{1,3,7};
 
         DataArray da = new DataArray(entrada);
 
-        da.delete(elemBorrar);
+        assertDoesNotThrow(() -> da.delete(elemBorrar));
 
         Assertions.assertArrayEquals(expectedArray, entrada);
     }
 
     @Test
-    public void deleteC2() throws DataException {
+    public void deleteC2() {
         int entrada[] = new int[]{1,3,3,5,7};
         int elemBorrar = 3;
         int expectedArray[] = new int[]{1,3,5,7};
 
         DataArray da = new DataArray(entrada);
 
-        da.delete(elemBorrar);
+        assertDoesNotThrow(() -> da.delete(elemBorrar));
 
         Assertions.assertArrayEquals(expectedArray, entrada);
     }
 
     @Test
-    public void deleteC3() throws DataException {
+    public void deleteC3() {
         int entrada[] = new int[]{1,2,3,4,5,6,7,8,9,10};
         int elemBorrar = 4;
         int expectedArray[] = new int[]{1,2,3,5,6,7,8,9,10};
 
         DataArray da = new DataArray(entrada);
 
-        da.delete(elemBorrar);
+        assertDoesNotThrow(() -> da.delete(elemBorrar));
 
         Assertions.assertArrayEquals(expectedArray, entrada);
 
