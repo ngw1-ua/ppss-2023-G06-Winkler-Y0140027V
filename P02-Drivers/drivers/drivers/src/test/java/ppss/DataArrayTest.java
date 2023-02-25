@@ -101,20 +101,35 @@ public class DataArrayTest {
         assertTrue(ex.getMessage().contains(expectedMessage));
     }
 
-    private static Stream<Arguments> test (){ return Stream.of(
+    private static Stream<Arguments> testC8 (){ return Stream.of(
             Arguments.of(new int[]{}, 8, "No hay elementos en la colección"),
             Arguments.of(new int []{1,3,5,7}, -5, "El valor a borrar debe ser > 0"),
             Arguments.of(new int []{}, 0, "Colección vacía. Y el valor a borrar debe ser > 0"),
             Arguments.of(new int []{1,3,5,7}, 8, "Elemento no encontrado"));}
 
     @ParameterizedTest
-    @MethodSource("test")
+    @MethodSource("testC8")
     @Tag("parametrizado")
     @Tag("conExcepciones")
-    public void reservaButacasC5(int[] coleccion, int borrar, String expectedMsg){
+    public void deleteC8(int[] coleccion, int borrar, String expectedMsg){
         DataArray da = new DataArray(coleccion);
         Exception ex = assertThrows(DataException.class, () -> da.delete(borrar));
 
         assertTrue(ex.getMessage().contains(expectedMsg));
+    }
+
+    private static Stream<Arguments> testC9 (){ return Stream.of(
+            Arguments.of(new int []{1,3,5,7}, 5, new int []{1,3,7}),
+            Arguments.of(new int []{1,3,3,5,7}, 3, new int []{1,3,5,7}),
+            Arguments.of(new int []{1,2,3,4,5,6,7,8,9,10}, 4, new int []{1,2,3,5,6,7,8,9,10}));}
+
+    @ParameterizedTest
+    @MethodSource("testC9")
+    @Tag("parametrizado")
+    public void deleteC9(int[] coleccion, int borrar, int[] expectedCollection){
+        DataArray da = new DataArray(coleccion);
+        assertDoesNotThrow(() -> da.delete(borrar));
+
+        Assertions.assertArrayEquals(expectedCollection, coleccion);
     }
 }

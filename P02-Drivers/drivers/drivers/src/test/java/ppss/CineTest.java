@@ -1,4 +1,5 @@
 package ppss;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -71,6 +72,7 @@ public class CineTest {
 
     @ParameterizedTest
     @MethodSource("test")
+    @Tag("parametrizado")
     public void reservaButacasC5(boolean expected, boolean[] expectedAsientos, boolean[] asientos, int solicitados){
         Cine cine = new Cine();
         boolean res = assertDoesNotThrow(() -> cine.reservaButacasV1(asientos, solicitados));

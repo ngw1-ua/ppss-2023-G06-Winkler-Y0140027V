@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="FicheroTextoTest sin excluidos" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="Run todos" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -12,7 +12,7 @@
             <list>
               <option value="clean" />
               <option value="test" />
-              <option value="-Dtest=FicheroTextoTest" />
+              <option value="-DexcludeGroups=parametrizados" />
             </list>
           </option>
           <option name="pomFileName" />
