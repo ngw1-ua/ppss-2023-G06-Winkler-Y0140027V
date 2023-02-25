@@ -47,7 +47,7 @@ public class CineTest {
         boolean res = assertDoesNotThrow(() -> cine.reservaButacasV1(asientos, solicitados));
 
         assertTrue(res);
-        assertArrayEquals(asientos, expectedAsientos);
+        assertArrayEquals(expectedAsientos, asientos);
    }
 
     @Test
@@ -61,13 +61,21 @@ public class CineTest {
         boolean res = assertDoesNotThrow(() -> cine.reservaButacasV1(asientos, solicitados));
 
         assertFalse(res);
-        assertArrayEquals(asientos, expectedAsientos);
+        assertArrayEquals(expectedAsientos, asientos);
     }
-    //private static Stream<Arguments> test (){ return Stream.of(Arguments.of(new boolean[]{},3),
-    //        Arguments.of(new boolean[]{}, 0));}
-    //@ParameterizedTest
-    //@MethodSource("test")
-    //public void reservaButacasC5(){
 
-    //}
+    private static Stream<Arguments> test (){ return Stream.of(
+            Arguments.of(false, new boolean[]{}, new boolean[]{}, 0),
+            Arguments.of(true, new boolean[]{true, true, false, true, true}, new boolean []{false, false, false, true, true}, 2),
+            Arguments.of(false,new boolean[]{true, true, true}, new boolean []{true, true, true}, 1));}
+
+    @ParameterizedTest
+    @MethodSource("test")
+    public void reservaButacasC5(boolean expected, boolean[] expectedAsientos, boolean[] asientos, int solicitados){
+        Cine cine = new Cine();
+        boolean res = assertDoesNotThrow(() -> cine.reservaButacasV1(asientos, solicitados));
+
+        assertEquals(expected, res);
+        assertArrayEquals(expectedAsientos, asientos);
+    }
 }

@@ -1,0 +1,20 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run CineTest" type="JUnit" factoryName="JUnit">
+    <module name="drivers" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="ppss.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="ppss" />
+    <option name="MAIN_CLASS_NAME" value="ppss.CineTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" value="mvn clean test -Dtest=CineTest" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/intellij-configurations" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
