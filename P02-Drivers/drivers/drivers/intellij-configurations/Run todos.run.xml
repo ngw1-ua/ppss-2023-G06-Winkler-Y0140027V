@@ -12,7 +12,7 @@
             <list>
               <option value="clean" />
               <option value="test" />
-              <option value="-DexcludeGroups=parametrizados" />
+              <option value="-DexcludeGroups=parametrizados,excluidos" />
             </list>
           </option>
           <option name="pomFileName" />

@@ -1,4 +1,5 @@
 package ppss;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -29,6 +30,7 @@ public class FicheroTextoTest {
     }
 
     @Test
+    @Tag("excluidos")
     public void contarCaracteresC3(){
         String nombreFichero = "src/test/rescources/ficheroC3.txt";
         String expectedMessage = "ficheroC3.txt (Error al leer el archivo)";
@@ -40,6 +42,7 @@ public class FicheroTextoTest {
     }
 
     @Test
+    @Tag("excluidos")
     public void contarCaracteresC4(){
         String nombreFichero = "src/test/rescources/ficheroC4.txt";
         String expectedMessage = "ficheroC3.txt (Error al cerrar el archivo)";
