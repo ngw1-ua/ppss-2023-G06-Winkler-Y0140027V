@@ -32,8 +32,8 @@ public class AlquilaCochesTest {
         ac.setServicio(ss);
         CalendarioStub cs = new CalendarioStub();
         cs.setThingsToReturn(new ArrayList<Boolean>(Collections.nCopies(10, Boolean.FALSE)));
-        cs.thingsToReturn.set(1, Boolean.TRUE);
-        cs.thingsToReturn.set(5, Boolean.TRUE);
+        cs.thingsToReturn.set(2, Boolean.TRUE);
+        cs.thingsToReturn.set(6, Boolean.TRUE);
         ac.calendario = cs;
         Ticket res = assertDoesNotThrow(() -> { return ac.calculaPrecio(TipoCoche.CARAVANA, LocalDate.of(2023, 06, 19), 7);});
         assertEquals(expected.getPrecio_final(), res.getPrecio_final());
@@ -46,6 +46,8 @@ public class AlquilaCochesTest {
         ServicioStub ss = new ServicioStub();
         ss.setPrecio(10);
         ac.setServicio(ss);
+        CalendarioStub cs = new CalendarioStub();
+        ac.calendario = cs;
         MensajeException ex = assertThrows(MensajeException.class, () -> { ac.calculaPrecio(TipoCoche.TURISMO, LocalDate.of(2023, 04, 17), 8);});
         assertEquals(expected, ex.getMessage());
     }

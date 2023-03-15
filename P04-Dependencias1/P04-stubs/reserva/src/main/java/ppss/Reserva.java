@@ -4,15 +4,25 @@ import ppss.exceptions.ReservaException;
 
 
 import java.util.ArrayList;
+import java.util.Objects;
+
 public class Reserva {
     public boolean compruebaPermisos(String login, String password, Usuario tipoUsu) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
+
+    public IOperacionBO operacionFactory(){
+        return new Operacion();
+    }
     public void realizaReserva(String login, String password, String socio, String [] isbns) throws ReservaException {
         ArrayList<String> errores = new ArrayList<>();
-        if(!compruebaPermisos(login, password, Usuario.BIBLIOTECARIO)) {
-            errores.add("ERROR de permisos"); } else {
-            IOperacionBO io = new Operacion();
+        if(!compruebaPermisos(login, password, Usuario.BIBLIOTECARIO))
+        {
+            errores.add("ERROR de permisos");
+        }
+        else
+        {
+            IOperacionBO io = operacionFactory();
             try {
                 for(String isbn: isbns)
                 {
@@ -32,9 +42,10 @@ public class Reserva {
             }
             catch (JDBCException je)
             {
+                errores.add("CONEXION invalida");
             }
         }
-        errores.add("CONEXION invalida");
+
         if (errores.size() > 0)
         {
             String mensajeError = "";
