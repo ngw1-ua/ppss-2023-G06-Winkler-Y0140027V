@@ -10,8 +10,23 @@
     </parent>
     <artifactId>hotelWebApp</artifactId>
     <packaging>war</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>hotelDatabase</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId> <artifactId>wildfly-maven-plugin</artifactId> <version>3.0.2.Final</version> <configuration>
+                <hostname>localhost</hostname>
+                <port>9990</port>
+                <jbossHome>/Library/wildfly-26.1.2.Final</jbossHome>
+            </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
