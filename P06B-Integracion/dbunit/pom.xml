@@ -2,12 +2,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ppss</groupId>
-  <artifactId>hotels</artifactId>
+  <artifactId>dbunit</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>hotels</name>
+  <name>dbunit</name>
   <modules>
-    <module>hotelDatabase</module>
-    <module>hotelWebApp</module>
+    <module>dbunitexample</module>
   </modules>
 </project>
