@@ -7,6 +7,6 @@
   <packaging>pom</packaging>
   <name>dbunit</name>
   <modules>
-    <module>dbunitexample</module>
+
   </modules>
 </project>

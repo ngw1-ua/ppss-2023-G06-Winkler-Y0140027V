@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/dbunitexample">
       <sourceFolder url="file://$MODULE_DIR$/dbunitexample/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dbunitexample/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/dbunitexample/src/test/resources" type="java-test-resource" />
     </content>
   </component>

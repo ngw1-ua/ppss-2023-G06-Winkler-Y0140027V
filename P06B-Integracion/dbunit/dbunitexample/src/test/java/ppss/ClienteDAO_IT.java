@@ -28,9 +28,9 @@ public class ClienteDAO_IT {
   @BeforeEach
   public void setUp() throws Exception {
 
-    String cadena_conexionDB = "cadena de conexion";
-    databaseTester = new JdbcDatabaseTester("clase del driver jdbc para poder acceder a la BD",
-            "cadena de conexion", "login", "password");
+    String cadena_conexionDB = "jdbc:mysql://localhost:3306/DBUNIT";
+    databaseTester = new JdbcDatabaseTester("com.mysql.cj.jdbc.Driver",
+            "jdbc:mysql://localhost:3306/DBUNIT", "root", "toortoor");
     connection = databaseTester.getConnection();
 
     clienteDAO = new ClienteDAO();

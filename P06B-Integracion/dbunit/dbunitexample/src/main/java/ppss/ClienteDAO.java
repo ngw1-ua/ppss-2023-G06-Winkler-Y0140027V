@@ -1,4 +1,4 @@
-import ppss.IClienteDAO;
+package ppss;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,11 +9,11 @@ import java.sql.Statement;
 
 public class ClienteDAO implements IClienteDAO {
     
-    private final String cadena_conexionDB = "cadena de conexcion BD"; 
+    private final String cadena_conexionDB = "jdbc:mysql://localhost:3306/DBUNIT";
     
     static {
         try {
-            Class.forName("clase del driver jdbc para poder acceder a la BD");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
         }
@@ -22,7 +22,7 @@ public class ClienteDAO implements IClienteDAO {
     //Insertamos un cliente en la BD
     public void insert(Cliente cliente) throws SQLException {
         //Los parametros de getConnection son tres: url de conexión con la BD, usuario, y password de la BD
-        Connection connection = DriverManager.getConnection(cadena_conexionDB, "login", "password");
+        Connection connection = DriverManager.getConnection(cadena_conexionDB, "root", "toortoor");
         
         String sql = "insert into cliente (id, nombre, apellido, direccion, ciudad) values ("
                    + cliente.getId() + ", "
@@ -42,7 +42,7 @@ public class ClienteDAO implements IClienteDAO {
     
     //Borramos un cliente de la BD
     public void delete (Cliente cliente) throws SQLException {
-        Connection connection = DriverManager.getConnection(cadena_conexionDB, "login", "password");
+        Connection connection = DriverManager.getConnection(cadena_conexionDB, "root", "toortoor");
         
         String sql = "delete from cliente where id= "
                    + cliente.getId();
@@ -57,7 +57,7 @@ public class ClienteDAO implements IClienteDAO {
     
     //Modificamos los datos de un cliente en la BD
     public void update(Cliente cliente) throws SQLException {
-        Connection connection = DriverManager.getConnection(cadena_conexionDB, "login", "password");
+        Connection connection = DriverManager.getConnection(cadena_conexionDB, "root", "toortoor");
         
         String sql = "UPDATE cliente SET "
                     + "nombre="+ "'" + cliente.getNombre() + "', "
@@ -76,7 +76,7 @@ public class ClienteDAO implements IClienteDAO {
     
     //ModRecuperamos los datos de un cliente en la BD mediante su id
     public Cliente retrieve(int clienteID) throws SQLException {
-        Connection connection = DriverManager.getConnection(cadena_conexionDB, "login", "password");
+        Connection connection = DriverManager.getConnection(cadena_conexionDB, "root", "toortoor");
         
         String sql = "SELECT id, nombre, apellido, direccion, ciudad from cliente "
                     + "WHERE id=" + "'" + clienteID+ "'";

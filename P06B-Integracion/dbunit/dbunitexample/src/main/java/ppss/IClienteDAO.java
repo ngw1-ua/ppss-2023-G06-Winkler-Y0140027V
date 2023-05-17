@@ -1,3 +1,5 @@
+package ppss;
+
 import java.sql.SQLException;
 
 public interface IClienteDAO {
