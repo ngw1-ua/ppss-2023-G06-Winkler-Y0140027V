@@ -1,0 +1,165 @@
+{
+  "id": "c0354dc4-3cd6-4f18-a8bc-a1f7e80bde1b",
+  "version": "2.0",
+  "name": "P07",
+  "url": "http://127.0.0.1:8080",
+  "tests": [{
+    "id": "1e990bce-5c8b-4170-8e1f-63807dc7f19b",
+    "name": "Caso de prueba 1",
+    "commands": [{
+      "id": "fbcb9d82-6510-4395-a837-31e073c7c58d",
+      "comment": "",
+      "command": "open",
+      "target": "/jpetstore/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2809e372-1a58-46b6-8543-8a5af097f246",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1200x688",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "857cb116-66fb-4fc2-b08d-ec45e0534ba2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Enter the Store",
+      "targets": [
+        ["linkText=Enter the Store", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Enter the Store')]", "xpath:link"],
+        ["xpath=//div[@id='Content']/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'actions/Catalog.action')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Enter the Store')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b269157-5d6c-419b-b05d-b075a551a73b",
+      "comment": "",
+      "command": "verifyTitle",
+      "target": "JPetStore Demo",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "454764c7-148e-4ceb-bb1e-3ed7ecb30b86",
+      "comment": "",
+      "command": "click",
+      "target": "css=area:nth-child(2)",
+      "targets": [
+        ["css=area:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='MainImageContent']/map/area[2]", "xpath:idRelative"],
+        ["xpath=//area[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4a59734-e22c-402e-9f23-ed3fe640b29b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=FI-SW-02",
+      "targets": [
+        ["linkText=FI-SW-02", "linkText"],
+        ["css=tr:nth-child(3) a", "css:finder"],
+        ["xpath=//a[contains(text(),'FI-SW-02')]", "xpath:link"],
+        ["xpath=//div[@id='Catalog']/table/tbody/tr[3]/td/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/jpetstore/actions/Catalog.action?viewProduct=&productId=FI-SW-02')]", "xpath:href"],
+        ["xpath=//tr[3]/td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'FI-SW-02')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bfe3a626-c139-4a12-9edd-91a795406d1d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=td:nth-child(3)",
+      "targets": [
+        ["css=td:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='Catalog']/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"]
+      ],
+      "value": "Toothless Tiger Shark"
+    }, {
+      "id": "335d54a4-595d-436e-854d-a190f18481b2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Return to FISH",
+      "targets": [
+        ["linkText=Return to FISH", "linkText"],
+        ["css=#BackLink > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Return to FISH')]", "xpath:link"],
+        ["xpath=//div[@id='BackLink']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/jpetstore/actions/Catalog.action?viewCategory=&categoryId=FISH')])[2]", "xpath:href"],
+        ["xpath=//body/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Return to FISH')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "805a9fb9-c0ac-4948-9772-f3ab8a2182f1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Return to Main Menu",
+      "targets": [
+        ["linkText=Return to Main Menu", "linkText"],
+        ["css=#BackLink > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Return to Main Menu')]", "xpath:link"],
+        ["xpath=//div[@id='BackLink']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/jpetstore/actions/Catalog.action')])[7]", "xpath:href"],
+        ["xpath=//body/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Return to Main Menu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1853fa4-3b13-4614-b5bd-2c01a55e20bc",
+      "comment": "",
+      "command": "click",
+      "target": "id=MenuContent",
+      "targets": [
+        ["id=MenuContent", "id"],
+        ["css=#MenuContent", "css:finder"],
+        ["xpath=//div[@id='MenuContent']", "xpath:attributes"],
+        ["xpath=//div[@id='Menu']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fd3481c-5e79-400b-9307-d8d234084d1e",
+      "comment": "",
+      "command": "click",
+      "target": "id=MenuContent",
+      "targets": [
+        ["id=MenuContent", "id"],
+        ["css=#MenuContent", "css:finder"],
+        ["xpath=//div[@id='MenuContent']", "xpath:attributes"],
+        ["xpath=//div[@id='Menu']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5746807-df5d-4be9-a79b-d870fcd1a93d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "linkText=Sign In",
+      "targets": [
+        ["linkText=Sign In", "linkText"],
+        ["css=#MenuContent > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign In')]", "xpath:link"],
+        ["xpath=//div[@id='MenuContent']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/jpetstore/actions/Account.action?signonForm=')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": "Sign In"
+    }]
+  }],
+  "suites": [{
+    "id": "29583997-b389-4e02-878e-548cbf66bdb9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1e990bce-5c8b-4170-8e1f-63807dc7f19b"]
+  }],
+  "urls": ["http://127.0.0.1:8080/"],
+  "plugins": []
+}
