@@ -1,5 +1,6 @@
 package ejercicio1.sinPageObject;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -17,6 +18,12 @@ public class TestLogin {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.get("http://demo-store.seleniumacademy.com/");
+    }
+
+    @AfterEach
+    public void after()
+    {
+        driver.close();
     }
     @Test
     public void loginOK(){
