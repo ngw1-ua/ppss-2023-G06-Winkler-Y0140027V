@@ -44,7 +44,24 @@ public class TestLogin {
         assertTrue(driver.getTitle().contains("My Account"));
     }
 
+    @Test
     public void loginFailed(){
+        assertTrue(driver.getTitle().contains("Madison Island"));
 
+        WebElement account = driver.findElement(By.xpath("/html/body/div/div[2]/header/div/div[2]/div/a"));
+        account.click();
+
+        driver.findElement(By.xpath("/html/body/div/div[2]/header/div/div[5]/div/ul/li[6]/a")).click();
+
+        assertTrue(driver.getTitle().contains("Customer Login"));
+
+        driver.findElement(By.id("email")).sendKeys("ngwinkler-ppss@ppss.es");
+        driver.findElement(By.id("pass")).sendKeys("incorrect123");
+
+        driver.findElement(By.id("send2")).click();
+
+        String confirmation = driver.findElement(By.xpath("/html/body/div/div[2]/div[2]/div/div/div[2]/ul/li/ul/li/span")).getText();
+
+        assertEquals("Invalid login or password.", confirmation);
     }
 }
