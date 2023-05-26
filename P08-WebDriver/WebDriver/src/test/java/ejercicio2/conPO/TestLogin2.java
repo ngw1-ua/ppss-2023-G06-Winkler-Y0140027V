@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestLogin2 {
-
     WebDriver driver;
     HomePage hp;
     @BeforeEach
